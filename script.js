@@ -1,40 +1,14 @@
-let display = document.getElementById('display');
-let currentInput = '';
-let currentOperator = '';
-let currentTotal = 0;
-let operatorClicked = false;
+function cekUmur() {
+            var nama = document.getElementById("nama").value;
+            var umur = document.getElementById("umur").value;
 
-function appendToDisplay(value) {
-    if (operatorClicked) {
-        display.value = '';
-        operatorClicked = false;
-    }
-    currentInput += value;
-    display.value += value;
-}
-
-function clearDisplay() {
-    display.value = '';
-    currentInput = '';
-    currentOperator = '';
-    currentTotal = 0;
-}
-
-function calculateResult() {
-    if (currentOperator === '+') {
-        currentTotal += parseFloat(currentInput);
-    } else if (currentOperator === '-') {
-        currentTotal -= parseFloat(currentInput);
-    } else if (currentOperator === '*') {
-        currentTotal *= parseFloat(currentInput);
-    } else if (currentOperator === '/') {
-        currentTotal /= parseFloat(currentInput);
-    } else {
-        currentTotal = parseFloat(currentInput);
-    }
-
-    display.value = currentTotal;
-    currentInput = '';
-    currentOperator = '';
-    operatorClicked = true;
-}
+            if (umur < 7) {
+                alert(nama + ", kamu anak-anak.");
+            } else if (umur >= 7 && umur < 18) {
+                alert(nama + ", kamu remaja.");
+            } else if (umur >= 18 && umur < 60) {
+                alert(nama + ", kamu dewasa.");
+            } else {
+                alert(nama + ", kamu lansia.");
+            }
+        }
